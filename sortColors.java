@@ -39,3 +39,21 @@ class Solution {
         }
     }
 }
+
+*******************************************************
+
+class Solution {
+    public void sortColors(int[] nums) {
+        int x=0,y=0,z=0;
+        for (int n:nums) {
+            if (n==0) x++;
+            if (n==1) y++;
+            if (n==2) z++;
+        }
+        for (int i=0;i<nums.length;i++) {
+            if (i<x) nums[i]=0;
+            else if (i<x+y) nums[i]=1;
+            else if (z>0) nums[i]=2;
+        }
+    }
+}
