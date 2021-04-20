@@ -23,3 +23,19 @@ class Solution {
         }
     }
 }
+
+*****************************************************
+
+class Solution {
+    public void sortColors(int[] nums) {
+        int[] help=new int[3];
+        for (int n:nums) {
+            help[n]++;
+        }
+        for (int i=0;i<nums.length;i++) {
+            if (i<help[0]) nums[i]=0;
+            else if (i<help[0]+help[1]) nums[i]=1;
+            else if (help[2]>0) nums[i]=2;
+        }
+    }
+}
